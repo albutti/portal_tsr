@@ -1,0 +1,43 @@
+main {
+    display: grid;
+    justify-content: center;
+    padding-top: 75px;
+}
+
+.secao_opcoes {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+
+}
+
+.secao_opcoes > a {
+    text-decoration: none;
+}
+
+.opcoes:hover {
+    box-shadow: 5px 5px 10px rgba(1, 1, 17, 0.664);
+    width: 175px;
+    height: 225px;
+    font-size: 25px;
+}
+
+.opcoes {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 150px;
+    height: 210px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.foto_opcao {
+    width: 130px;
+    height: 130px;
+    padding: 10px;
+}
+
+.texto_opcao {
+    padding-bottom: 10px;
+}

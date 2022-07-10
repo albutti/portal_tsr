@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#sol {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#lua {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cabecalho {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    background-color: rgb(33, 49, 100);
+    font-size: 25px;
+    color: #ffffff;
+    padding: 5px;
+    height: 40px;
+    
+}
+
+.divisao_central {
+    text-align: center;
+}
+
+.botao_mudar_modo {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(33, 49, 100);;
+    width: 100px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding: 3px;
+}
+
+.div_header {
+    margin: auto;
+}
+
+.tivit {
+    color: rgb(194, 48, 48);
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <title>Portal TSR</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div>
+            <p class="tivit"><strong>TIVIT</strong></p>
+        </div>
+        <div class="divisao_central div_header">
+            <p>Portal TSR</p>
+        </div>
+        <div class="div_header">
+            <div class="botao_mudar_modo">
+                <div>
+                    <a href="#" class="mudar_modo" onclick="modo_claro()">
+                        <img src="img/sol_ativo.png" alt="sol" class="foto_mudar_modo" id="sol">
+                    </a>
+                </div>
+                <div></div>
+                <div>
+                    <a href="#" class="mudar_modo" onclick="modo_escuro()">
+                        <img src="img/lua.png" alt="lua" class="foto_mudar_modo" id="lua">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="secao_opcoes">
+            <a href="Estamos_no_controle/estamos_controle.html">
+                <article class="opcoes">
+                    <img src="img/estamos_no_controle.png" alt="Estamos no controle" class="foto_opcao">
+                    <p class="texto_opcao" id="texto_estamos_controle">Estamos no controle</p>
+                </article>
+            </a>
+            <a href="Comunicacao/comunicacao.html" >
+                <article class="opcoes">
+                    <img src="img/comunicacao.png" alt="comunicação" class="foto_opcao">
+                    <p class="texto_opcao" id="texto_comunicacao">comunicação</p>
+                </article>
+            </a>
+            <a href="#">
+                <article class="opcoes">
+                    <img src="img/teams.png" alt="sala teams" class="foto_opcao">
+                    <p class="texto_opcao" id="texto_sala_teams">Salas Teams</p>
+                </article>
+            </a>
+            <a href="#">
+                <article class="opcoes">
+                    <img src="img/comunicacao.png" alt="comunicação" class="foto_opcao">
+                    <p class="texto_opcao" id="texto_aleatorio1">comunicação</p>
+                </article>
+            </a>
+        </section>
+        <section class="secao_opcoes">
+            <a href="#">
+                <article class="opcoes">
+                    <img src="img/estamos_no_controle.png" alt="Estamos no controle" class="foto_opcao">
+                    <p class="texto_opcao" id="texto_aleatorio2">Estamos no controle</p>
+                </article>
+            </a>
+            <a href="#">
+                <article class="opcoes">
+                    <img src="img/comunicacao.png" alt="comunicação" class="foto_opcao">
+                    <p class="texto_opcao" id="texto_aleatorio3">comunicação</p>
+                </article>
+            </a>
+            <a href="#">
+                <article class="opcoes">
+                    <img src="img/estamos_no_controle.png" alt="Estamos no controle" class="foto_opcao">
+                    <p class="texto_opcao" id="texto_aleatorio4">Estamos no controle</p>
+                </article>
+            </a>
+            <a href="#">
+                <article class="opcoes">
+                    <img src="img/comunicacao.png" alt="PRB" class="foto_opcao">
+                    <p class="texto_opcao" id="texto_prb">PRB</p>
+                </article>
+            </a>
+        </section>
+    </main>
+    <script src="js/modo_escuro.js"></script>
+</body>
+</html>
