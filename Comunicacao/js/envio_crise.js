@@ -55,8 +55,9 @@ function calcular_tempo_crise(impacto, inicio){
     var delay = '';
 
     /** calulo de dia**/
-    var d_ii = parseInt(a_ii[8] + a_ii[9]);
-    var d_ic = parseInt(a_ic[8] + a_ic[9]);
+    var d_ii = parseInt(a_ii[0] + a_ii[1]);
+    var d_ic = parseInt(a_ic[0] + a_ic[1]);
+    
 
     /** calulo de hora**/
     var h_ii = 0;
@@ -92,7 +93,7 @@ function calcular_tempo_crise(impacto, inicio){
                         return delay
                     }
                 }else {
-                    d_delay = 0;
+                    d_delay = d_ic - d_ii;
                     if (m_ii > m_ic) {
                         m_delay = 60 - (m_ii - m_ic);
                         h_delay--;
