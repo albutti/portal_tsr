@@ -225,3 +225,19 @@ a {
 .informativo_check {
     margin-left: 30px;
 }
+
+.grupo_rm {
+    width: 50px;
+}
+
+.grupo_clientes {
+    width: 150px;
+}
+
+#botao_crise_sem_checkpoint {
+    display: grid;
+}
+
+#botao_crise_checkpoint {
+    display: none;
+}

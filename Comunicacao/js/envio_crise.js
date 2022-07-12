@@ -206,6 +206,31 @@ function gerar_copia_atualizacao_crise() {
     var tsr_atualizacao_crise = document.getElementById('tsr_atualizacao_crise').value;
     texto_atualizacao_crise.innerHTML = `Atualização Crise: ${numero_atualizacao_crise} <br>Cliente: ${cliente_atualizacao_crise} <br>Ambiente: ${acn_atualizacao_crise} <br>Status: ${status_atualizacao_crise} <br><br>Ações Realizadas/Em Andamento <br>${acoes_atualizacao_crise} <br><br>Ações Planejadas/Previstas <br>${previsto_atualizacao_crise} <br><br>Resolution Manager: ${rm_atualizacao_crise}/${grupo_rm_atualizacao_crise} <br> Responsável TSR: ${tsr_atualizacao_crise}`;
 }
+var botao_crise_sem_checkpoint = document.getElementById('botao_crise_sem_checkpoint');
+var botao_crise_checkpoint = document.getElementById('botao_crise_checkpoint');
+
+function troca_botao_copia_checkpoint() {
+    botao_crise_checkpoint.style.display = 'grid';
+    botao_crise_sem_checkpoint.style.display = 'none'; 
+}
+function troca_botao_copia() {
+    botao_crise_checkpoint.style.display = 'none';
+    botao_crise_sem_checkpoint.style.display = 'grid'; 
+}
+
+function gerar_copia_atualizacao_checkpoint_crise() {
+    var numero_atualizacao_crise = document.getElementById('numero_atualizacao_crise').value;
+    var cliente_atualizacao_crise = document.getElementById('cliente_atualizacao_crise').value;
+    var acn_atualizacao_crise = document.getElementById('acn_atualizacao_crise').value;
+    var status_atualizacao_crise = document.getElementById('status_atualizacao_crise').value;
+    var link_atualizacao_crise = document.getElementById('link_atualizacao_crise').value;
+    var acoes_atualizacao_crise = document.getElementById('acoes_atualizacao_crise').value;
+    var previsto_atualizacao_crise = document.getElementById('previsto_atualizacao_crise').value;
+    var rm_atualizacao_crise = document.getElementById('rm_atualizacao_crise').value;
+    var grupo_rm_atualizacao_crise = document.getElementById('grupo_rm_atualizacao_crise').value;
+    var tsr_atualizacao_crise = document.getElementById('tsr_atualizacao_crise').value;
+    texto_atualizacao_crise.innerHTML = `Atualização Crise: ${numero_atualizacao_crise} <br>Cliente: ${cliente_atualizacao_crise} <br>Ambiente: ${acn_atualizacao_crise} <br>Status: ${status_atualizacao_crise} <br>Teams: ${link_atualizacao_crise}<br><br>Ações Realizadas/Em Andamento <br>${acoes_atualizacao_crise} <br><br>Ações Planejadas/Previstas <br>${previsto_atualizacao_crise} <br><br>Resolution Manager: ${rm_atualizacao_crise}/${grupo_rm_atualizacao_crise} <br> Responsável TSR: ${tsr_atualizacao_crise}`;
+}
 
 /** gerar copia da validação**/
 function gerar_copia_validacao_crise() {
