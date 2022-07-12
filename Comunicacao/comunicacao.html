@@ -171,13 +171,13 @@
                         <input type="radio" name="informativo" id="alarme" checked class="informativo_check">
                         <label for="alarme">Alarme </label>
                         <input type="radio" name="informativo" id="crise" class="informativo_check">
-                        <label for="alarme">Pré-Crise </label>
+                        <label for="crise">Pré-Crise </label>
                         <input type="radio" name="informativo" id="degradação" class="informativo_check">
-                        <label for="alarme">Pré-Degradação </label>
+                        <label for="degradação">Pré-Degradação </label>
                     </div>
                     <form>
                         <div class="espasamento_informativo">
-                            <label for="nome" >Cliente: </label>
+                            <label for="cliente_informativo" >Cliente: </label>
                             <select name="select" id="cliente_informativo" class="grupo_clientes">
                                 <option value="ABC DISTRIBUIDORA">ABC DISTRIBUIDORA</option>
                                 <option value="ACUCAR GUARANI">ACUCAR GUARANI</option>
@@ -363,15 +363,15 @@
                             </select>
                         </div> 
                         <div class="espasamento_informativo">
-                            <label for="nome">ACN: </label>
+                            <label for="acn_informativo">ACN: </label>
                             <input type="text" id="acn_informativo" placeholder="Ambiente Impactado">
                         </div>  
                         <div class="espasamento_informativo">
-                            <label for="nome">INC: </label>
+                            <label for="inc_informativo">INC: </label>
                             <input type="text" id="inc_informativo" placeholder="Numero do incidente">
                         </div>  
                         <div class="espasamento_informativo">
-                            <label for="nome">Impacto: </label>
+                            <label for="impacto_informativo">Impacto: </label>
                             <input type="text" id="impacto_informativo" placeholder="Descrição do impacto">
                         </div>
                         <div class="espasamento_informativo">
@@ -396,10 +396,7 @@
                 </div>
                 <div class="alarme_pendente">
                     <div><img src="#" alt="logo_cliente"></div>
-                    <div><p>
-                        INC2022XXXXXXX<br>
-                        ACN<br>
-                        Descrição...</p>
+                    <div id="descricao_alarme_pendente">
                     </div>
                     <div>
                         <p>Enviado à XXhXXm</p>
@@ -542,7 +539,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_crise()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>
@@ -575,10 +572,10 @@
                     </div>
                     <div class="espasamento_informativo">
                         <label for="checkpoint_crise" >Checkpoint s:</label>
-                        <input type="radio" name="checkpoint" value="checkpoint_sim" id="checkpoint_crise_checkpoint"onclick="troca_botao_copia_checkpoint()">
+                        <input type="radio" name="checkpoint_crise" value="checkpoint_sim" id="checkpoint_crise_checkpoint"onclick="troca_botao_copia_checkpoint()">
                         <label for="checkpoint_crise" >n:</label>
-                        <input type="radio" name="checkpoint" value="checkpoint_nao" id="checkpoint_crise_sem_checkpoint"onclick="troca_botao_copia()" checked>
-                        <label for="link_atualizacao_crise">     Teams:</label>
+                        <input type="radio" name="checkpoint_crise" value="checkpoint_nao" id="checkpoint_crise_sem_checkpoint"onclick="troca_botao_copia()" checked>
+                        <label for="link_atualizacao_crise">Teams:</label>
                         <input type="text" id="link_atualizacao_crise">
                     </div>
                     <div class="espasamento_informativo">
@@ -623,9 +620,11 @@
                         texto
                     </div>
                     <div class="Criando_mensagem">
-                        <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
+                        <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_crise()">Enviar</a></p> 
                     </div>
                     <p>Atualização Anterior:</p>
+                    <br>
+                    <div id="atualizacao_anterior_crise"></div>
                 </div>
             </section>			
         </div>
@@ -659,6 +658,10 @@
                         <input type="text" id="solucao_validacao_crise" placeholder="Boot na maquina..." required>
                     </div>
                     <div class="espasamento_informativo">
+                        <label for="link_validacao_crise">Teams:</label>
+                        <input type="text" id="link_validacao_crise">
+                    </div>
+                    <div class="espasamento_informativo">
                         <label for="tsr_validacao_crise">Responsavel TSR: </label>
                         <input type="text" id="tsr_validacao_crise" placeholder="Nome Sobrenome" required>
                     </div>
@@ -669,7 +672,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_crise()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>
@@ -746,7 +749,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_crise()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>
@@ -815,7 +818,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_crise()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>
@@ -915,7 +918,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_degradacao()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>
@@ -945,6 +948,14 @@
                     <div class="espasamento_informativo">
                         <label for="status_atualizacao_degradacao">Status: </label><br>
                         <textarea type="text" id="status_atualizacao_degradacao" placeholder="Ambiente segue..." cols="30" rows="5" required></textarea>
+                    </div>
+                    <div class="espasamento_informativo">
+                        <label for="checkpoint_degradacao" >Checkpoint s:</label>
+                        <input type="radio" name="checkpoint_degradacao" value="checkpoint_sim" id="checkpoint_degradacao_checkpoint"onclick="troca_botao_copia_checkpoint_degradacao()">
+                        <label for="checkpoint_degradacao" >n:</label>
+                        <input type="radio" name="checkpoint_degradacao" value="checkpoint_nao" id="checkpoint_degradacao_sem_checkpoint"onclick="troca_botao_copia_degradacao()" checked>
+                        <label for="link_atualizacao_degradacao">Teams:</label>
+                        <input type="text" id="link_atualizacao_degradacao">
                     </div>
                     <div class="espasamento_informativo">
                         <label for="acoes_atualizacao_degradacao">Ações Realizadas/Em Andamento: </label>
@@ -982,7 +993,8 @@
                         <label for="tsr_atualizacao_degradacao">Responsavel TSR: </label>
                         <input type="text" id="tsr_atualizacao_degradacao" placeholder="Nome Sobrenome" required>
                     </div>
-                    <<p class="p_botao"><a href="#" class="botao" onclick="gerar_copia_atualizacao_degradacao()">Gerar Copia</a></p>
+                    <p class="p_botao" id="botao_degradacao_sem_checkpoint"><a href="#" class="botao" onclick="gerar_copia_atualizacao_degradacao()">Gerar Copia</a></p>
+                    <p class="p_botao" id="botao_degradacao_checkpoint"><a href="#" class="botao" onclick="gerar_copia_atualizacao_checkpoint_degradacao()">Gerar Copia</a></p>
                     <p>✅ Concluido  📍 Previsto</p>
                     <p>❌ Indisponivel   ⚠ Em andamento</p>
                 </div>
@@ -991,9 +1003,10 @@
                         texto
                     </div>
                     <div class="Criando_mensagem">
-                        <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
+                        <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_degradacao()">Enviar</a></p> 
                     </div>
-                    <p>Atualização Anterior:</p>
+                    <p >Atualização Anterior:</p>
+                    <div id="atualizacao_anterior_degradacao"></div>
                 </div>
             </section>			
         </div>
@@ -1027,6 +1040,10 @@
                         <input type="text" id="solucao_validacao_degradacao" placeholder="Boot na maquina..." required>
                     </div>
                     <div class="espasamento_informativo">
+                        <label for="link_validacao_degradacao">Teams:</label>
+                        <input type="text" id="link_validacao_degradacao">
+                    </div>
+                    <div class="espasamento_informativo">
                         <label for="tsr_validacao_degradacao">Responsavel TSR: </label>
                         <input type="text" id="tsr_validacao_degradacao" placeholder="Nome Sobrenome" required>
                     </div>
@@ -1037,7 +1054,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_degradacao()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>
@@ -1114,7 +1131,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_degradacao()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>
@@ -1183,7 +1200,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_degradacao()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>
@@ -1200,7 +1217,7 @@
                 <div class="texto_pronto" id="texto_alarme">
                 </div>
                 <div class="Criando_mensagem">
-                    <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p>
+                    <p class="p_botao"><a href="#" class="botao" onclick="enviar_informativo()">Enviar</a></p>
                 </div>
             </section>			
         </div>
@@ -1215,7 +1232,7 @@
                 <div class="texto_pronto" id="texto_pre_crise">
                 </div>
                 <div class="Criando_mensagem">
-                    <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p>
+                    <p class="p_botao"><a href="#" class="botao" onclick="enviar_informativo()">Enviar</a></p>
                 </div>
             </section>			
         </div>
@@ -1230,7 +1247,7 @@
                 <div class="texto_pronto" id="texto_pre_degradacao">
                 </div>
                 <div class="Criando_mensagem">
-                    <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
+                    <p class="p_botao"><a href="#" class="botao" onclick="enviar_informativo()">Enviar</a></p> 
                 </div>
             </section>			
         </div>

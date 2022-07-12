@@ -1,4 +1,22 @@
-/** abrir o popup de Crise**/
+/** Declaração de Variaveis **/
+/** busca do campo do texto **/
+var texto_inicial_crise = document.getElementById('texto_inicial_crise');
+var texto_atualizacao_crise = document.getElementById('texto_atualizacao_crise');
+var texto_validacao_crise = document.getElementById('texto_validacao_crise');
+var texto_encerramento_crise = document.getElementById('texto_encerramento_crise');
+var texto_unica_crise = document.getElementById('texto_unica_crise');
+
+/** Botões de rascunho de atualização de Crise **/
+var botao_crise_sem_checkpoint = document.getElementById('botao_crise_sem_checkpoint');
+var botao_crise_checkpoint = document.getElementById('botao_crise_checkpoint');
+
+/** Campo de guarda atualização atual **/
+var texto_atualizacao_previa = '';
+
+/** Campo de guarda ultima atualização **/
+var atualizacao_anterior_crise = document.getElementById('atualizacao_anterior_crise');
+
+/** abrir e fechar os popup de Crise**/
 function abrir_inicial_crise(){
     document.getElementById('popup_inicial_crise').style.display = 'block';
 }
@@ -33,12 +51,6 @@ function abrir_unica_crise(){
 function fechar_unica_crise(){
     document.getElementById('popup_unica_crise').style.display =  'none';
 }
-
-/** busca do campo do texto **/
-var texto_atualizacao_crise = document.getElementById('texto_atualizacao_crise');
-var texto_validacao_crise = document.getElementById('texto_validacao_crise');
-var texto_encerramento_crise = document.getElementById('texto_encerramento_crise');
-var texto_unica_crise = document.getElementById('texto_unica_crise');
 
 /** 2,0,2,2, -, 0,7, -, 0,9, T,  1, 2,  :,  1, 8 **/
 /** 0,1,2,3, 4, 5,6, 7, 8,9, 10, 11,12, 13, 14,15 **/
@@ -171,10 +183,8 @@ function calcular_tempo_crise(impacto, inicio){
     }
 }
 
-
 /** gerar copia da inicial**/
 function gerar_copia_incial_crise() {
-    var texto_inicial_crise = document.getElementById('texto_inicial_crise');
     var numero_inicial_crise = document.getElementById('numero_inicial_crise').value;
     var cliente_inicial_crise = document.getElementById('cliente_inicial_crise').value;
     var acn_inicial_crise = document.getElementById('acn_inicial_crise').value;
@@ -191,8 +201,23 @@ function gerar_copia_incial_crise() {
     var grupo_rm_inicial_crise = document.getElementById('grupo_rm_inicial_crise').value;
     var equipes_atuando_inicial_crise = document.getElementById('equipes_atuando_inicial_crise').value;
     var responsavel_tsr_inicial_crise = document.getElementById('responsavel_tsr_inicial_crise').value;
-    texto_inicial_crise.innerHTML = `Iniciando Crise: ${numero_inicial_crise} <br>Cliente: ${cliente_inicial_crise} <br>Ambiente: ${acn_inicial_crise} <br>Teams: ${link_teams_inicial_crise} <br>Telefone: ${telefone_teams_inicial_crise}       ID: ${id_teams_inicial_crise}# <br><br>Sintoma: ${sintoma_inicial_crise} <br>Impacto: ${impacto_inicial_crise} <br><br>Inicio do Impacto: ${inicio_impacto_inicial_crise} <br>Inicio da crise: ${inicio_crise} <br>Delay Impacto X Tratativa: ${delay} <br>Identificado por: ${identificado_inicial_crise} <br><br>Resolution Manager: ${rm_inicial_crise}/${grupo_rm_inicial_crise}<br>Equipe atuando: ${equipes_atuando_inicial_crise}<br>Responsável TSR: ${responsavel_tsr_inicial_crise}`;
+    texto_atualizacao_previa = `Iniciando Crise: ${numero_inicial_crise} <br>Cliente: ${cliente_inicial_crise} <br>Ambiente: ${acn_inicial_crise} <br>Teams: ${link_teams_inicial_crise} <br>Telefone: ${telefone_teams_inicial_crise}       ID: ${id_teams_inicial_crise}# <br><br>Sintoma: ${sintoma_inicial_crise} <br>Impacto: ${impacto_inicial_crise} <br><br>Inicio do Impacto: ${inicio_impacto_inicial_crise} <br>Inicio da crise: ${inicio_crise} <br>Delay Impacto X Tratativa: ${delay} <br>Identificado por: ${identificado_inicial_crise} <br><br>Resolution Manager: ${rm_inicial_crise}/${grupo_rm_inicial_crise}<br>Equipe atuando: ${equipes_atuando_inicial_crise}<br>Responsável TSR: ${responsavel_tsr_inicial_crise}`;
+    texto_inicial_crise.innerHTML = texto_atualizacao_previa;
 }
+
+
+/** Trocar os botoes para chamar o texto sem checkpoint ou com **/
+function troca_botao_copia_checkpoint() {
+    botao_crise_checkpoint.style.display = 'grid';
+    botao_crise_sem_checkpoint.style.display = 'none'; 
+}
+
+function troca_botao_copia() {
+    botao_crise_checkpoint.style.display = 'none';
+    botao_crise_sem_checkpoint.style.display = 'grid'; 
+}
+
+
 /** gerar copia das atualizações (Problema que nao pula linha automatico) **/
 function gerar_copia_atualizacao_crise() {
     var numero_atualizacao_crise = document.getElementById('numero_atualizacao_crise').value;
@@ -204,18 +229,8 @@ function gerar_copia_atualizacao_crise() {
     var rm_atualizacao_crise = document.getElementById('rm_atualizacao_crise').value;
     var grupo_rm_atualizacao_crise = document.getElementById('grupo_rm_atualizacao_crise').value;
     var tsr_atualizacao_crise = document.getElementById('tsr_atualizacao_crise').value;
-    texto_atualizacao_crise.innerHTML = `Atualização Crise: ${numero_atualizacao_crise} <br>Cliente: ${cliente_atualizacao_crise} <br>Ambiente: ${acn_atualizacao_crise} <br>Status: ${status_atualizacao_crise} <br><br>Ações Realizadas/Em Andamento <br>${acoes_atualizacao_crise} <br><br>Ações Planejadas/Previstas <br>${previsto_atualizacao_crise} <br><br>Resolution Manager: ${rm_atualizacao_crise}/${grupo_rm_atualizacao_crise} <br> Responsável TSR: ${tsr_atualizacao_crise}`;
-}
-var botao_crise_sem_checkpoint = document.getElementById('botao_crise_sem_checkpoint');
-var botao_crise_checkpoint = document.getElementById('botao_crise_checkpoint');
-
-function troca_botao_copia_checkpoint() {
-    botao_crise_checkpoint.style.display = 'grid';
-    botao_crise_sem_checkpoint.style.display = 'none'; 
-}
-function troca_botao_copia() {
-    botao_crise_checkpoint.style.display = 'none';
-    botao_crise_sem_checkpoint.style.display = 'grid'; 
+    texto_atualizacao_previa = `Atualização Crise: ${numero_atualizacao_crise} <br>Cliente: ${cliente_atualizacao_crise} <br>Ambiente: ${acn_atualizacao_crise} <br>Status: ${status_atualizacao_crise} <br><br>Ações Realizadas/Em Andamento <br>${acoes_atualizacao_crise} <br><br>Ações Planejadas/Previstas <br>${previsto_atualizacao_crise} <br><br>Resolution Manager: ${rm_atualizacao_crise}/${grupo_rm_atualizacao_crise} <br> Responsável TSR: ${tsr_atualizacao_crise}`;
+    texto_atualizacao_crise.innerHTML = texto_atualizacao_previa;
 }
 
 function gerar_copia_atualizacao_checkpoint_crise() {
@@ -229,7 +244,8 @@ function gerar_copia_atualizacao_checkpoint_crise() {
     var rm_atualizacao_crise = document.getElementById('rm_atualizacao_crise').value;
     var grupo_rm_atualizacao_crise = document.getElementById('grupo_rm_atualizacao_crise').value;
     var tsr_atualizacao_crise = document.getElementById('tsr_atualizacao_crise').value;
-    texto_atualizacao_crise.innerHTML = `Atualização Crise: ${numero_atualizacao_crise} <br>Cliente: ${cliente_atualizacao_crise} <br>Ambiente: ${acn_atualizacao_crise} <br>Status: ${status_atualizacao_crise} <br>Teams: ${link_atualizacao_crise}<br><br>Ações Realizadas/Em Andamento <br>${acoes_atualizacao_crise} <br><br>Ações Planejadas/Previstas <br>${previsto_atualizacao_crise} <br><br>Resolution Manager: ${rm_atualizacao_crise}/${grupo_rm_atualizacao_crise} <br> Responsável TSR: ${tsr_atualizacao_crise}`;
+    texto_atualizacao_previa = `Atualização Crise: ${numero_atualizacao_crise} <br>Cliente: ${cliente_atualizacao_crise} <br>Ambiente: ${acn_atualizacao_crise} <br>Status: ${status_atualizacao_crise} <br>Teams: ${link_atualizacao_crise}<br><br>Ações Realizadas/Em Andamento <br>${acoes_atualizacao_crise} <br><br>Ações Planejadas/Previstas <br>${previsto_atualizacao_crise} <br><br>Resolution Manager: ${rm_atualizacao_crise}/${grupo_rm_atualizacao_crise} <br> Responsável TSR: ${tsr_atualizacao_crise}`;
+    texto_atualizacao_crise.innerHTML = texto_atualizacao_previa;
 }
 
 /** gerar copia da validação**/
@@ -239,8 +255,10 @@ function gerar_copia_validacao_crise() {
     var acn_validacao_crise = document.getElementById('acn_validacao_crise').value;
     var status_validacao_crise = document.getElementById('status_validacao_crise').value;
     var solucao_validacao_crise = document.getElementById('solucao_validacao_crise').value;
+    var link_validacao_crise = document.getElementById('link_validacao_crise').value;
     var tsr_validacao_crise = document.getElementById('tsr_validacao_crise').value;
-    texto_validacao_crise.innerHTML = `Validação da Crise: ${numero_validacao_crise} <br>Cliente: ${cliente_validacao_crise} <br>Ambiente: ${acn_validacao_crise} <br></br>Status: ${status_validacao_crise} <br></br>Solução Aplicada: ${solucao_validacao_crise} <br>Responsável TSR: ${tsr_validacao_crise}`;
+    texto_atualizacao_previa = `Validação da Crise: ${numero_validacao_crise} <br>Cliente: ${cliente_validacao_crise} <br>Ambiente: ${acn_validacao_crise} <br></br>Status: ${status_validacao_crise} <br></br>Solução Aplicada: ${solucao_validacao_crise}<br>Link Teams: ${link_validacao_crise} <br>Responsável TSR: ${tsr_validacao_crise}`;
+    texto_validacao_crise.innerHTML = texto_atualizacao_previa;
 }
 
 /** gerar copia do encerramento**/
@@ -264,7 +282,8 @@ function gerar_copia_encerramento_crise() {
     var grupo_rm_encerramento_crise = document.getElementById('grupo_rm_encerramento_crise').value;
     var tsr_encerramento_crise = document.getElementById('tsr_encerramento_crise').value;
 
-    texto_encerramento_crise.innerHTML = `Encerramento Crise: ${numero_encerramento_crise}<br>Cliente: ${cliente_encerramento_crise} <br>Ambiente: ${acn_encerramento_crise} <br><br>Status: ${status_encerramento_crise} <br><br>Periodo da crise: ${inicio_encerramento_crise} às ${fim_encerramento_crise} (${delay_periodo_crise}) <br>Período do impacto: ${inicio_impacto_encerramento_crise} às ${fim_impacto_encerramento_crise} (${delay_periodo_impacto}) <br>periodo em validação: ${fim_impacto_encerramento_crise} às ${fim_encerramento_crise} (${delay_periodo_validacao}) <br><br>Resolution Manager: ${rm_encerramento_crise}/${grupo_rm_encerramento_crise} <br>Responsável TSR: ${tsr_encerramento_crise}`;
+    texto_atualizacao_previa = `Encerramento Crise: ${numero_encerramento_crise}<br>Cliente: ${cliente_encerramento_crise} <br>Ambiente: ${acn_encerramento_crise} <br><br>Status: ${status_encerramento_crise} <br><br>Periodo da crise: ${inicio_encerramento_crise} às ${fim_encerramento_crise} (${delay_periodo_crise}) <br>Período do impacto: ${inicio_impacto_encerramento_crise} às ${fim_impacto_encerramento_crise} (${delay_periodo_impacto}) <br>periodo em validação: ${fim_impacto_encerramento_crise} às ${fim_encerramento_crise} (${delay_periodo_validacao}) <br><br>Resolution Manager: ${rm_encerramento_crise}/${grupo_rm_encerramento_crise} <br>Responsável TSR: ${tsr_encerramento_crise}`;
+    texto_encerramento_crise.innerHTML = texto_atualizacao_previa;
 }
 
 /** gerar copia da unica**/
@@ -280,5 +299,23 @@ function gerar_copia_unica_crise() {
     var fim_impacto_unica_crise = layout_tempo_crise(document.getElementById('fim_impacto_unica_crise').value);
     var delay_periodo_crise_unica = calcular_tempo_crise(inicio_impacto_unica_crise, fim_impacto_unica_crise);
     var tsr_unica_crise = document.getElementById('tsr_unica_crise').value;
-    texto_unica_crise.innerHTML = `Crise Única: ${numero_unica_crise} <br> Cliente: ${cliente_unica_crise} <br>Ambiente: ${acn_unica_crise} <br><br>Sintoma: ${sintoma_unica_crise} </br>Impacto: ${status_unica_crise} <br><br>Identificado por: ${identificacao_unica_crise} <br>Horário de notificação para o TSR: ${horario_notificacao_unica_crise} <br>Período de Impacto: ${inicio_impacto_unica_crise}  até ${fim_impacto_unica_crise} (${delay_periodo_crise_unica}) <br></br>Responsável TSR: ${tsr_unica_crise}`;
+    texto_atualizacao_previa = `Crise Única: ${numero_unica_crise} <br> Cliente: ${cliente_unica_crise} <br>Ambiente: ${acn_unica_crise} <br><br>Sintoma: ${sintoma_unica_crise} </br>Impacto: ${status_unica_crise} <br><br>Identificado por: ${identificacao_unica_crise} <br>Horário de notificação para o TSR: ${horario_notificacao_unica_crise} <br>Período de Impacto: ${inicio_impacto_unica_crise}  até ${fim_impacto_unica_crise} (${delay_periodo_crise_unica}) <br></br>Responsável TSR: ${tsr_unica_crise}`;
+    texto_unica_crise.innerHTML = texto_atualizacao_previa;
+}
+
+/** Enviar comunicação de crise  **/
+
+function enviar_atualizacao_crise() {
+    atualizacao_anterior_crise.innerHTML = texto_atualizacao_previa;
+    texto_inicial_crise.innerHTML = 'texto';
+    texto_atualizacao_crise.innerHTML = 'texto';
+    texto_validacao_crise.innerHTML = 'texto';
+    texto_encerramento_crise.innerHTML = 'texto';
+    texto_unica_crise.innerHTML = 'texto';
+
+    document.getElementById('popup_encerramento_crise').style.display =  'none';
+    document.getElementById('popup_validacao_crise').style.display =  'none';
+    document.getElementById('popup_atualizacao_crise').style.display =  'none';
+    document.getElementById('popup_inicial_crise').style.display =  'none';
+    document.getElementById('popup_unica_crise').style.display =  'none';
 }

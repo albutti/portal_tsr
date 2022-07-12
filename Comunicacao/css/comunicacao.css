@@ -241,3 +241,11 @@ a {
 #botao_crise_checkpoint {
     display: none;
 }
+
+#botao_degradacao_sem_checkpoint {
+    display: grid;
+}
+
+#botao_degradacao_checkpoint {
+    display: none;
+}

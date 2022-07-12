@@ -180,7 +180,6 @@ var texto_unica_degradacao = document.getElementById('texto_unica_degradacao');
 
 /** gerar copia da inicial**/
 function gerar_copia_incial_degradacao() {
-    var texto_inicial_degradacao = document.getElementById('texto_inicial_degradacao');
     var numero_inicial_degradacao = document.getElementById('numero_inicial_degradacao').value;
     var cliente_inicial_degradacao = document.getElementById('cliente_inicial_degradacao').value;
     var acn_inicial_degradacao = document.getElementById('acn_inicial_degradacao').value;
@@ -197,7 +196,37 @@ function gerar_copia_incial_degradacao() {
     var grupo_rm_inicial_degradacao = document.getElementById('grupo_rm_inicial_degradacao').value;
     var equipes_atuando_inicial_degradacao = document.getElementById('equipes_atuando_inicial_degradacao').value;
     var responsavel_tsr_inicial_degradacao = document.getElementById('responsavel_tsr_inicial_degradacao').value;
-    texto_inicial_degradacao.innerHTML = `Iniciando Degradação: ${numero_inicial_degradacao} <br>Cliente: ${cliente_inicial_degradacao} <br>Ambiente: ${acn_inicial_degradacao} <br>Teams: ${link_teams_inicial_degradacao} <br>Telefone: ${telefone_teams_inicial_degradacao}        ID: ${id_teams_inicial_degradacao}# <br><br>Sintoma: ${sintoma_inicial_degradacao} <br>Impacto: ${impacto_inicial_degradacao} <br><br>Inicio do Impacto: ${inicio_impacto_inicial_degradacao} <br>Inicio da Degradação: ${inicio_degradacao} <br>Delay Impacto X Tratativa: ${delay_degradacao}<br> Identificado por: ${identificado_inicial_degradacao} <br><br>Resolution Manager: ${rm_inicial_degradacao}/${grupo_rm_inicial_degradacao}<br>Equipe atuando: ${equipes_atuando_inicial_degradacao} <br>Responsável TSR: ${responsavel_tsr_inicial_degradacao}`;
+
+    texto_atualizacao_previa_degradacao = `Iniciando Degradação: ${numero_inicial_degradacao} <br>Cliente: ${cliente_inicial_degradacao} <br>Ambiente: ${acn_inicial_degradacao} <br>Teams: ${link_teams_inicial_degradacao} <br>Telefone: ${telefone_teams_inicial_degradacao}        ID: ${id_teams_inicial_degradacao}# <br><br>Sintoma: ${sintoma_inicial_degradacao} <br>Impacto: ${impacto_inicial_degradacao} <br><br>Inicio do Impacto: ${inicio_impacto_inicial_degradacao} <br>Inicio da Degradação: ${inicio_degradacao} <br>Delay Impacto X Tratativa: ${delay_degradacao}<br> Identificado por: ${identificado_inicial_degradacao} <br><br>Resolution Manager: ${rm_inicial_degradacao}/${grupo_rm_inicial_degradacao}<br>Equipe atuando: ${equipes_atuando_inicial_degradacao} <br>Responsável TSR: ${responsavel_tsr_inicial_degradacao}`;
+    texto_inicial_degradacao.innerHTML = texto_atualizacao_previa_degradacao;
+}
+
+var botao_degradacao_sem_checkpoint = document.getElementById('botao_degradacao_sem_checkpoint');
+var botao_degradacao_checkpoint = document.getElementById('botao_degradacao_checkpoint');
+
+function troca_botao_copia_checkpoint_degradacao() {
+    botao_degradacao_checkpoint.style.display = 'grid';
+    botao_degradacao_sem_checkpoint.style.display = 'none'; 
+}
+function troca_botao_copia_degradacao() {
+    botao_degradacao_checkpoint.style.display = 'none';
+    botao_degradacao_sem_checkpoint.style.display = 'grid'; 
+}
+
+function gerar_copia_atualizacao_checkpoint_degradacao() {
+    var numero_atualizacao_degradacao = document.getElementById('numero_atualizacao_degradacao').value;
+    var cliente_atualizacao_degradacao = document.getElementById('cliente_atualizacao_degradacao').value;
+    var acn_atualizacao_degradacao = document.getElementById('acn_atualizacao_degradacao').value;
+    var status_atualizacao_degradacao = document.getElementById('status_atualizacao_degradacao').value;
+    var link_atualizacao_degradacao = document.getElementById('link_atualizacao_degradacao').value;
+    var acoes_atualizacao_degradacao = document.getElementById('acoes_atualizacao_degradacao').value;
+    var previsto_atualizacao_degradacao = document.getElementById('previsto_atualizacao_degradacao').value;
+    var rm_atualizacao_degradacao = document.getElementById('rm_atualizacao_degradacao').value;
+    var grupo_rm_atualizacao_degradacao = document.getElementById('grupo_rm_atualizacao_degradacao').value;
+    var tsr_atualizacao_degradacao = document.getElementById('tsr_atualizacao_degradacao').value;
+
+    texto_atualizacao_previa_degradacao = `Atualização Degradação: ${numero_atualizacao_degradacao} <br>Cliente: ${cliente_atualizacao_degradacao} <br>Ambiente: ${acn_atualizacao_degradacao} <br>Status: ${status_atualizacao_degradacao} <br>Link Teams: ${link_atualizacao_degradacao}<br><br>Ações Realizadas/Em Andamento <br>${acoes_atualizacao_degradacao} <br><br>Ações Planejadas/Previstas <br>${previsto_atualizacao_degradacao} <br><br>Resolution Manager: ${rm_atualizacao_degradacao}/${grupo_rm_atualizacao_degradacao} <br> Responsável TSR: ${tsr_atualizacao_degradacao}`;
+    texto_atualizacao_degradacao.innerHTML = texto_atualizacao_previa_degradacao;
 }
 
 /** gerar copia da atualização **/
@@ -212,7 +241,8 @@ function gerar_copia_atualizacao_degradacao() {
     var grupo_rm_atualizacao_degradacao = document.getElementById('grupo_rm_atualizacao_degradacao').value;
     var tsr_atualizacao_degradacao = document.getElementById('tsr_atualizacao_degradacao').value;
 
-    texto_atualizacao_degradacao.innerHTML = `Atualização Degradação: ${numero_atualizacao_degradacao} <br>Cliente: ${cliente_atualizacao_degradacao} <br>Ambiente: ${acn_atualizacao_degradacao} <br>Status: ${status_atualizacao_degradacao} <br><br>Ações Realizadas/Em Andamento ${acoes_atualizacao_degradacao} <br><br>Ações Planejadas/Previstas <br>${previsto_atualizacao_degradacao} <br><br>Resolution Manager: ${rm_atualizacao_degradacao}/${grupo_rm_atualizacao_degradacao} <br> Responsável TSR: ${tsr_atualizacao_degradacao}`;
+    texto_atualizacao_previa_degradacao = `Atualização Degradação: ${numero_atualizacao_degradacao} <br>Cliente: ${cliente_atualizacao_degradacao} <br>Ambiente: ${acn_atualizacao_degradacao} <br>Status: ${status_atualizacao_degradacao} <br><br>Ações Realizadas/Em Andamento ${acoes_atualizacao_degradacao} <br><br>Ações Planejadas/Previstas <br>${previsto_atualizacao_degradacao} <br><br>Resolution Manager: ${rm_atualizacao_degradacao}/${grupo_rm_atualizacao_degradacao} <br> Responsável TSR: ${tsr_atualizacao_degradacao}`;
+    texto_atualizacao_degradacao.innerHTML = texto_atualizacao_previa_degradacao;
 }
 
 /** gerar copia da validação**/
@@ -222,9 +252,11 @@ function gerar_copia_validacao_degradacao() {
     var acn_validacao_degradacao = document.getElementById('acn_validacao_degradacao').value;
     var status_validacao_degradacao = document.getElementById('status_validacao_degradacao').value;
     var solucao_validacao_degradacao = document.getElementById('solucao_validacao_degradacao').value;
+    var link_validacao_degradacao = document.getElementById('link_validacao_degradacao').value;
     var tsr_validacao_degradacao = document.getElementById('tsr_validacao_degradacao').value;
 
-    texto_validacao_degradacao.innerHTML = `Validação da Degradação: ${numero_validacao_degradacao} <br>Cliente: ${cliente_validacao_degradacao} <br>Ambiente: ${acn_validacao_degradacao} <br></br>Status: ${status_validacao_degradacao} <br></br>Solução Aplicada: ${solucao_validacao_degradacao} <br>Responsável TSR: ${tsr_validacao_degradacao}`;
+    texto_atualizacao_previa_degradacao = `Validação da Degradação: ${numero_validacao_degradacao} <br>Cliente: ${cliente_validacao_degradacao} <br>Ambiente: ${acn_validacao_degradacao} <br></br>Status: ${status_validacao_degradacao} <br></br>Solução Aplicada: ${solucao_validacao_degradacao}<br>Link Teams: ${link_validacao_degradacao} <br>Responsável TSR: ${tsr_validacao_degradacao}`;
+    texto_validacao_degradacao.innerHTML = texto_atualizacao_previa_degradacao;
 }
 
 /** gerar copia do encerramento **/
@@ -248,12 +280,12 @@ function gerar_copia_encerramento_degradacao() {
     var grupo_rm_encerramento_degradacao = document.getElementById('grupo_rm_encerramento_degradacao').value;
     var tsr_encerramento_degradacao = document.getElementById('tsr_encerramento_degradacao').value;
 
-    texto_encerramento_degradacao.innerHTML = `Encerramento Crise: ${numero_encerramento_degradacao}<br>Cliente: ${acn_encerramento_degradacao} <br>Ambiente: ${cliente_encerramento_degradacao} <br><br>Status: ${status_encerramento_degradacao} <br><br>Periodo da crise: ${inicio_encerramento_degradacao} às ${fim_encerramento_degradacao} (${delay_periodo_degradacao}) <br>Período do impacto: ${inicio_impacto_encerramento_degradacao} às ${fim_impacto_encerramento_degradacao} (${delay_periodo_impacto_degradacao}) <br>periodo em validação: ${fim_impacto_encerramento_degradacao} às ${fim_encerramento_degradacao} (${delay_periodo_validacao_degradacao}) <br><br>Resolution Manager: ${rm_encerramento_degradacao}/${grupo_rm_encerramento_degradacao} <br>Responsável TSR: ${tsr_encerramento_degradacao}`;
+    texto_atualizacao_previa_degradacao = `Encerramento Crise: ${numero_encerramento_degradacao}<br>Cliente: ${acn_encerramento_degradacao} <br>Ambiente: ${cliente_encerramento_degradacao} <br><br>Status: ${status_encerramento_degradacao} <br><br>Periodo da crise: ${inicio_encerramento_degradacao} às ${fim_encerramento_degradacao} (${delay_periodo_degradacao}) <br>Período do impacto: ${inicio_impacto_encerramento_degradacao} às ${fim_impacto_encerramento_degradacao} (${delay_periodo_impacto_degradacao}) <br>periodo em validação: ${fim_impacto_encerramento_degradacao} às ${fim_encerramento_degradacao} (${delay_periodo_validacao_degradacao}) <br><br>Resolution Manager: ${rm_encerramento_degradacao}/${grupo_rm_encerramento_degradacao} <br>Responsável TSR: ${tsr_encerramento_degradacao}`;
+    texto_encerramento_degradacao.innerHTML = texto_atualizacao_previa_degradacao;
 }
 
 /** gerar copia da unica **/
 function gerar_copia_unica_degradacao() {
-    var texto_unica_degradacao = document.getElementById('texto_unica_degradacao');
     var numero_unica_degradacao = document.getElementById('numero_unica_degradacao').value;
     var cliente_unica_degradacao = document.getElementById('cliente_unica_degradacao').value;
     var acn_unica_degradacao = document.getElementById('acn_unica_degradacao').value;
@@ -266,5 +298,21 @@ function gerar_copia_unica_degradacao() {
     var delay_periodo_crise_degradacao = calcular_tempo_degradacao(inicio_impacto_unica_degradacao, fim_impacto_unica_degradacao);
     var tsr_unica_degradacao = document.getElementById('tsr_unica_degradacao').value;
 
-    texto_unica_degradacao.innerHTML = `Degradação Única: ${numero_unica_degradacao} <br> Cliente: ${cliente_unica_degradacao} <br>Ambiente: ${acn_unica_degradacao} <br><br>Sintoma: ${sintoma_unica_degradacao} </br>Impacto: ${status_unica_degradacao} <br><br>Identificado por: ${identificacao_unica__degradacao} <br>Horário de notificação para o TSR: ${horario_notificacao_unica_degradacao} <br>Período de Impacto: ${inicio_impacto_unica_degradacao}  até ${fim_impacto_unica_degradacao} (${delay_periodo_crise_degradacao}) <br></br>Responsável TSR: ${tsr_unica_degradacao}`;
+    texto_atualizacao_previa_degradacao = `Degradação Única: ${numero_unica_degradacao} <br> Cliente: ${cliente_unica_degradacao} <br>Ambiente: ${acn_unica_degradacao} <br><br>Sintoma: ${sintoma_unica_degradacao} </br>Impacto: ${status_unica_degradacao} <br><br>Identificado por: ${identificacao_unica__degradacao} <br>Horário de notificação para o TSR: ${horario_notificacao_unica_degradacao} <br>Período de Impacto: ${inicio_impacto_unica_degradacao}  até ${fim_impacto_unica_degradacao} (${delay_periodo_crise_degradacao}) <br></br>Responsável TSR: ${tsr_unica_degradacao}`;
+    texto_unica_degradacao.innerHTML = texto_atualizacao_previa_degradacao;
+}
+
+function enviar_atualizacao_degradacao() {
+    atualizacao_anterior_degradacao.innerHTML = texto_atualizacao_previa_degradacao;
+    texto_inicial_degradacao.innerHTML = 'texto';
+    texto_atualizacao_degradacao.innerHTML = 'texto';
+    texto_validacao_degradacao.innerHTML = 'texto';
+    texto_encerramento_degradacao.innerHTML = 'texto';
+    texto_unica_degradacao.innerHTML = 'texto';
+
+    document.getElementById('popup_encerramento_degradacao').style.display =  'none';
+    document.getElementById('popup_validacao_degradacao').style.display =  'none';
+    document.getElementById('popup_atualizacao_degradacao').style.display =  'none';
+    document.getElementById('popup_inicial_degradacao').style.display =  'none';
+    document.getElementById('popup_unica_degradacao').style.display =  'none';
 }
