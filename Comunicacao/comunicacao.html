@@ -41,26 +41,51 @@
                         <td>Responsável</td>
                         <td>Período</td>
                     </tr>
-                    <tr class="processo_comunicacao">
-                        <td><img src="#" alt="logo"></td>
-                        <td>INC2022XXXXXXX</td>
-                        <td>XXXXXX</td>
-                        <td>XXXXX XXXXX</td>
-                        <td>Xd, XXh, XXm</td>
+                    <tr id="processo_crise">
+                        <tr class="processo_comunicacao">
+                            <td><img src="#" alt="logo"></td>
+                            <td>2022.XX-XX</td>
+                            <td>XXXXXX</td>
+                            <td>XXXXX XXXXX</td>
+                            <td>Xd, XXh, XXm</td>
+                        </tr>
+                        <tr class="processo_comunicacao">
+                            <td><a href="javascript: abrir_inicial_crise();"><div class="bola_verde"></div></a></td> 
+                            <td><a href="javascript: abrir_atualizacao_crise();"><div class="bola_verde"></div></a></td>
+                            <td><a href="javascript: abrir_validacao_crise();"><div class="bola_verde"></div></a></td>
+                            <td><a href="javascript: abrir_encerramento_crise();"><div class="bola_cinza"></div></a></td>
+                            <td><a href="javascript: abrir_unica_crise();"><div class="bola_cinza"></div></a></td>
+                        </tr>
+                        <tr class="fim_processo">
+                            <td>Inicial</td>
+                            <td>Atualização</td>
+                            <td>Validação</td>
+                            <td>Encerramento</td>
+                            <td>Única</td>
+                        </tr>
                     </tr>
-                    <tr class="processo_comunicacao">
-                        <td><a href="javascript: abrir_inicial_crise();"><div class="bola_verde"></div></a></td> 
-                        <td><a href="javascript: abrir_atualizacao_crise();"><div class="bola_verde"></div></a></td>
-                        <td><a href="javascript: abrir_validacao_crise();"><div class="bola_verde"></div></a></td>
-                        <td><a href="javascript: abrir_encerramento_crise();"><div class="bola_cinza"></div></a></td>
-                        <td><a href="javascript: abrir_unica_crise();"><div class="bola_cinza"></div></a></td>
-                    </tr>
-                    <tr class="fim_processo">
-                        <td>Inicial</td>
-                        <td>Atualização</td>
-                        <td>Validação</td>
-                        <td>Encerramento</td>
-                        <td>Única</td>
+                    <tr id="processo_crise">
+                        <tr class="processo_comunicacao">
+                            <td><img src="#" alt="logo"></td>
+                            <td id="numero_crise_1">2022.XX-XX</td>
+                            <td id="acn_crise_1">XXXXXX</td>
+                            <td id="tsr_crise_1">XXXXX XXXXX</td>
+                            <td id="duracao_crise_1">Xd, XXh, XXm</td>
+                        </tr>
+                        <tr class="processo_comunicacao">
+                            <td><a href="javascript: abrir_inicial_crise();"><div class="bola_cinza" id="crise_1_incial"></div></a></td> 
+                            <td><a href="javascript: abrir_atualizacao_crise();"><div class="bola_cinza" id="crise_1_atualizacao"></div></a></td>
+                            <td><a href="javascript: abrir_validacao_crise();"><div class="bola_cinza" id="crise_1_validacao"></div></a></td>
+                            <td><a href="javascript: abrir_encerramento_crise();"><div class="bola_cinza" id="crise_1_encerramento"></div></a></td>
+                            <td><a href="javascript: abrir_unica_crise();"><div class="bola_cinza" id="crise_1_unica"></div></a></td>
+                        </tr>
+                        <tr class="fim_processo">
+                            <td>Inicial</td>
+                            <td>Atualização</td>
+                            <td>Validação</td>
+                            <td>Encerramento</td>
+                            <td>Única</td>
+                        </tr>
                     </tr>
                 </table>
             </article>
@@ -406,7 +431,7 @@
             </article>
         </section>
 
-<!-- atualização do aplicativo -->
+<!-- atualização do informativo -->
         <div id="popup_atualizacao_alarme" class="popup_informativo">
             <header class="topo_inicial">
                 <a href="javascript: fechar_atualizacao_alarme();" class="fechar_informativo">X</a>
@@ -431,15 +456,11 @@
                     <div class="mensagem_kaizala">
                         <div class="atualizacao_alarme">
                             <label for="alarme_sem_impacto" class="atualizacao_alarme">sem impacto: </label>
-                            <input type="radio" name="retorno_alarme" id="sem_impacto" checked class="atualizacao_alarme" onclick="exemplo_sem_impacto()">
+                            <input type="radio" name="retorno_alarme" id="sem_impacto" class="atualizacao_alarme" onclick="exemplo_sem_impacto()">
                             <label for="alarme_mudanca" class="atualizacao_alarme">Mudança: </label>
                             <input type="radio" name="retorno_alarme" id="mudanca" class="atualizacao_alarme" onclick="exemplo_mudanca()">
                         </div>
-                        <textarea name="exemplo_att_alarme" id="alarme_sem_impacto" cols="30" rows="10" class="atualizacao_alarme">⚠ ATUALIZAÇÃO TSR
-                               Em conferencia com os time >XXX e SDM/XXX, foi reportado que não há impacto para o serviço ACN:XXXX.</textarea>
-                        <textarea name="exemplo_att_alarme" id="alarme_mudanca" cols="30" rows="10" class="atualizacao_alarme">⚠ ATUALIZAÇÃO TSR
-                               Após avaliação dos times PTS-XXX e GSE-XXX, fois identificado que eo serviço ACN:XXXX está em mudança através da CHG2022XXXXXXX.</textarea>
-                        <div>
+                        <textarea name="exemplo_att_alarme" id="alarme_sem_impacto" cols="30" rows="10" class="atualizacao_alarme"></textarea>
                             <p class="p_botao"><a href="#" class="botao" onclick="enviar()">Enviar</a></p> 
                         </div>
                     </div>
@@ -539,7 +560,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_crise()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_inicial_crise()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>
@@ -556,7 +577,7 @@
                 <div class="Criando_mensagem">
                     <div class="espasamento_informativo">
                         <label for="numero_atualizacao_crise">Atualização da Crise: </label>
-                        <input type="text" id="numero_atualizacao_crise" placeholder="2022.XX-XX" required>
+                        <span id="numero_atualizacao_crise"></span>
                     </div>  
                     <div class="espasamento_informativo">
                         <label for="cliente_atualizacao_crise">Cliente: </label>
@@ -639,7 +660,7 @@
                 <div class="Criando_mensagem">
                     <div class="espasamento_informativo">
                         <label for="numero_validacao_crise">Atualização da Crise: </label>
-                        <input type="text" id="numero_validacao_crise" placeholder="2022.XX-XX" required>
+                        <spam id="numero_validacao_crise"></spam>
                     </div>  
                     <div class="espasamento_informativo">
                         <label for="cliente_validacao_crise">Cliente: </label>
@@ -672,7 +693,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_crise()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_validacao_crise()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>
@@ -689,7 +710,7 @@
                 <div class="Criando_mensagem">
                     <div class="espasamento_informativo">
                         <label for="numero_encerramento_crise">Encerramento da Crise: </label>
-                        <input type="text" id="numero_encerramento_crise" placeholder="2022.XX-XX" required>
+                        <span id="numero_encerramento_crise"></span>
                     </div>  
                     <div class="espasamento_informativo">
                         <label for="cliente_encerramento_crise">Cliente: </label>
@@ -705,7 +726,7 @@
                     </div>
                     <div class="espasamento_informativo">
                         <label for="inicio_encerramento_crise">Inicio da Crise: </label>
-                        <input type="datetime-local" id="inicio_encerramento_crise" placeholder="" required>
+                        <span id="inicio_encerramento_crise"></span>
                     </div>
                     <div class="espasamento_informativo">
                         <label for="fim_encerramento_crise">Encerramento: </label>
@@ -713,7 +734,7 @@
                     </div>
                     <div class="espasamento_informativo">
                         <label for="inicio_impacto_encerramento_crise">Inicio de impacto: </label>
-                        <input type="datetime-local" id="inicio_impacto_encerramento_crise" placeholder="" required>
+                        <span id="inicio_impacto_encerramento_crise"></span>
                     </div>
                     <div class="espasamento_informativo">
                         <label for="inicio_validacao_encerramento_crise">Fim do impacto: </label>
@@ -749,7 +770,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_crise()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_encerramento_crise()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>
@@ -818,7 +839,7 @@
                         texto:
                     </div>
                         <div class="Criando_mensagem">
-                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_atualizacao_crise()">Enviar</a></p> 
+                            <p class="p_botao"><a href="#" class="botao" onclick="enviar_unica_crise()">Enviar</a></p> 
                         </div>
                     </div>
                 </div>

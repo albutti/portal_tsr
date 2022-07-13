@@ -3,7 +3,7 @@
 
 function enviar() {
     document.getElementById('popup_atualizacao_alarme').style.display =  'none'; 
-}
+} 
 
 /** Atualização de alarme **/
 
@@ -14,16 +14,3 @@ function fechar_atualizacao_alarme(){
     document.getElementById('popup_atualizacao_alarme').style.display =  'none';
 }
 
-
-var texto_sem_impacto = document.getElementById('alarme_sem_impacto');
-var texto_mudanca = document.getElementById('alarme_mudanca');
-
-function exemplo_sem_impacto(){ 
-    texto_mudanca.style.display = 'none';
-    texto_sem_impacto.style.display = 'grid';
-}
-
-function exemplo_mudanca() {
-    texto_mudanca.style.display = 'grid';
-    texto_sem_impacto.style.display = 'none';
-}
