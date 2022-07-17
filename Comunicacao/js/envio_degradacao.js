@@ -1,5 +1,3 @@
-import { envio_informativo } from "module";
-
 /** geracao o popup de Degradaçao**/
 
 function abrir_inicial_degradacao(){
